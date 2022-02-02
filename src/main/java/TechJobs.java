@@ -117,9 +117,19 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // Print a list of jobs, iterate over an ArrayList of jobs. Each job is a HashMap. nested loop
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if(someJobs.size() == 0) {
+            System.out.println("No results found.");
+            return;
+        }
+       for (HashMap<String, String>job:someJobs) {
+           System.out.println("\n*****");
+           for(String key:job.keySet()) {
+               System.out.println(key + ": " + job.get(key));
+           }
+           System.out.println("*****");
+       }
 
-        System.out.println("printJobs is not implemented yet");
     }
 }
